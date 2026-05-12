@@ -135,24 +135,18 @@ a {
 	background-color: var(--col_gold);
 }
 
-
-.sub_header {
-	background-color: var(--bg_dark);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-	white-space: nowrap;
-	overflow-x: auto;
-}
-
 .sub_menu {
 	display: flex;
+    flex-wrap: wrap;
 	gap: 20px;
-	height: 44px;
 	align-items: center;
+    padding: 20px 46px;
+    background-color: var(--bg_dark);
 }
 
 .menu_item {
-	color: var(--col_gray);
-	font-size: 11px;
+	color: var(--col_white);
+	font-size: 18px;
 	font-weight: 700;
 	text-transform: uppercase;
 	display: inline-flex;
@@ -232,7 +226,7 @@ a {
 }
 
 .hero_btn_go {
-	background-color: var(--col_green);
+	background-color: #059669;
 	color: var(--col_white);
 	font-size: 14px;
 	font-weight: 800;
@@ -252,9 +246,62 @@ a {
 }
 
 .game_nav {
-	background-color: var(--bg_main);
+    display: flex;
+    justify-content: center;
 	padding: 10px 0;
 
+}
+
+.dropdown.game_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    padding: 0; 
+}
+
+.dropdown-toggle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px; 
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: -1px;
+    background-color: var(--bg_main);
+    width: calc(100% + 2px); 
+    border: 1px solid var(--col_gold);
+    z-index: 100;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    margin-left: 8px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.dropdown-menu a {
+    color: var(--col_gold);
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .top_box {
@@ -271,9 +318,9 @@ a {
 .game_list {
 	display: flex;
 	justify-content: center;
+    flex-wrap: wrap;
 	gap: 12px;
-	overflow-x: auto;
-	overflow-y: hidden;
+
 	width: 100%;
 
 }
@@ -292,12 +339,13 @@ a {
 	min-width: 285px;
 	background-color: var(--col_gold);
 	color: var(--bg_main);
-	font-size: 11px;
+	font-size: 18px;
 	font-weight: 800;
 	text-align: center;
 	padding: 12px 6px;
 	border-radius: 2px;
 	text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
 	letter-spacing: 0.5px;
 	cursor: pointer;
 	transition: 0.2s;
@@ -318,8 +366,7 @@ a {
 }
 
 .slots_title {
-	font-size: 16px;
-	font-weight: 800;
+	font-size: 18px;
 	color: var(--col_white);
 	margin-bottom: 16px;
 	letter-spacing: 0.5px;
@@ -414,9 +461,7 @@ a {
 	}
 
 	.game_list {
-		width: 1800px;
-		margin-left: auto;
-		margin-right: auto;
+		width: 1600px;
 	}
 
 	.scroll_line {
@@ -1149,14 +1194,19 @@ a {
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	gap: 8px;
+	gap: 12px;
 }
 
 .footer_legal {
 	text-align: center;
 	padding: 20px 10px 0;
-	font-size: 10px;
+	font-size: 12px;
 	color: var(--col_white);
+    margin-bottom: 30px;
+}
+
+.footer_p {
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -1200,9 +1250,7 @@ a {
 		max-width: 1400px;
 		gap: 25px;
 		align-items: center;
-
 	}
-
 
 	.p_row {
 		display: flex;
